@@ -59,7 +59,11 @@ function AuthPage() {
   }
 
   async function handleGoogle() {
-    const result = await lovable.auth.signInWithOAuth("google", { redirect_uri: window.location.origin });
+    // Same-origin public route: works on the Lovable preview, on Vercel and on a
+    // custom domain. Once the session hydrates, the effect above forwards to /projects.
+    const result = await lovable.auth.signInWithOAuth("google", {
+      redirect_uri: `${window.location.origin}/auth`,
+    });
     if (result.error) {
       toast.error("Google sign-in failed. Try email instead.");
       return;
