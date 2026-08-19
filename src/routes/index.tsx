@@ -3,6 +3,7 @@ import { AppHeader } from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import logo from "@/assets/kingsley-hub-logo.jpg.asset.json";
+import card from "@/assets/kingsley-hub-card.jpg.asset.json";
 import { THEMES } from "@/lib/themes";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -97,6 +98,40 @@ function Landing() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </section>
+        <section className="border-t border-border/60 bg-card/40">
+          <div className="mx-auto grid max-w-5xl items-center gap-8 px-4 py-16 md:grid-cols-2">
+            <div>
+              <h2 className="font-display text-2xl text-foreground">Need a custom lyric video?</h2>
+              <p className="mt-3 text-muted-foreground">
+                Kingsley Hub builds branded visual content, web platforms and digital systems. Reach out directly —
+                scan the WhatsApp code on the card or use the details below.
+              </p>
+              <ul className="mt-5 space-y-2 text-sm">
+                <li>
+                  <a className="story-link" href="tel:+254796286263">
+                    +254 796 286 263
+                  </a>
+                </li>
+                <li>
+                  <a className="story-link" href="mailto:kingsleyhub01@gmail.com">
+                    kingsleyhub01@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a className="story-link" href="https://www.kingsleyhub.com" target="_blank" rel="noreferrer">
+                    www.kingsleyhub.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <img
+              src={card.url}
+              alt="Kingsley Hub business card — Mark Ray, CEO, with contact details and WhatsApp QR code"
+              loading="lazy"
+              className="w-full rounded-xl border border-primary/30 shadow-lg"
+            />
           </div>
         </section>
       </main>

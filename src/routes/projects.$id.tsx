@@ -522,10 +522,10 @@ function StudioPage() {
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="display">Display (Cinzel)</SelectItem>
-                        <SelectItem value="sans">Sans (Montserrat)</SelectItem>
-                        <SelectItem value="serif">Serif</SelectItem>
-                        <SelectItem value="mono">Mono</SelectItem>
+                        <SelectItem value="display">Ubuntu Bold</SelectItem>
+                        <SelectItem value="sans">Ubuntu</SelectItem>
+                        <SelectItem value="serif">Ubuntu Condensed</SelectItem>
+                        <SelectItem value="mono">Ubuntu Mono</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
