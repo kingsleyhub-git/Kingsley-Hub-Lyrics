@@ -78,10 +78,10 @@ export const DEFAULT_STYLE: StyleSettings = {
 };
 
 export const FONT_STACKS: Record<FontChoice, string> = {
-  display: "'Cinzel', 'Times New Roman', serif",
-  sans: "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
-  serif: "'Playfair Display', Georgia, serif",
-  mono: "'JetBrains Mono', 'Courier New', monospace",
+  display: "'Ubuntu', 'Ubuntu Sans', Arial, sans-serif",
+  sans: "'Ubuntu', 'Ubuntu Sans', Arial, sans-serif",
+  serif: "'Ubuntu Condensed', 'Ubuntu', Arial, sans-serif",
+  mono: "'Ubuntu Mono', 'Ubuntu Sans Mono', monospace",
 };
 
 export const TEXT_COLORS: Record<TextPalette, [string, string]> = {
