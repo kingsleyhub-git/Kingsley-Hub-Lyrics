@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import logo from "@/assets/kingsley-hub-logo.jpg.asset.json";
+import logoUrl from "@/assets/kingsley-hub-logo.jpg";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -12,7 +12,7 @@ export function AppHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-3">
           <img
-            src={logo.url}
+            src={logoUrl}
             alt="Kingsley Hub logo"
             className="size-9 rounded-full object-cover ring-1 ring-primary/50"
           />

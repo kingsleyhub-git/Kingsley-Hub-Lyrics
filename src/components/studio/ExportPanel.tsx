@@ -7,7 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { drawFrame, resolutionFor, type RenderLine } from "@/lib/renderer";
 import type { StyleSettings } from "@/lib/themes";
-import logoAsset from "@/assets/kingsley-hub-logo.jpg.asset.json";
+import logoUrl from "@/assets/kingsley-hub-logo.jpg";
 
 interface Props {
   projectId: string;
@@ -40,7 +40,7 @@ async function loadLogo(): Promise<HTMLImageElement | null> {
     img.crossOrigin = "anonymous";
     img.onload = () => resolve(img);
     img.onerror = () => resolve(null);
-    img.src = logoAsset.url;
+    img.src = logoUrl;
   });
 }
 

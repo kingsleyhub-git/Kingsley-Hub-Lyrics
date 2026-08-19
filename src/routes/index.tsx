@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppHeader } from "@/components/AppHeader";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import logo from "@/assets/kingsley-hub-logo.jpg.asset.json";
-import card from "@/assets/kingsley-hub-card.jpg.asset.json";
+import logoUrl from "@/assets/kingsley-hub-logo.jpg";
+import cardUrl from "@/assets/kingsley-hub-card.jpg";
 import { THEMES } from "@/lib/themes";
 import { useAuth } from "@/hooks/useAuth";
 
@@ -44,7 +44,7 @@ function Landing() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(232,185,59,0.18),transparent_60%)]" />
           <div className="relative mx-auto max-w-5xl px-4 py-20 text-center">
             <img
-              src={logo.url}
+              src={logoUrl}
               alt="Kingsley Hub — Engineered for Digital Mastery"
               className="mx-auto size-32 rounded-full object-cover ring-2 ring-primary/40"
             />
@@ -127,7 +127,7 @@ function Landing() {
               </ul>
             </div>
             <img
-              src={card.url}
+              src={cardUrl}
               alt="Kingsley Hub business card — Mark Ray, CEO, with contact details and WhatsApp QR code"
               loading="lazy"
               className="w-full rounded-xl border border-primary/30 shadow-lg"
