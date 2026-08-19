@@ -45,7 +45,7 @@ export const THEMES: Theme[] = [
 ];
 
 export function getTheme(id: string | null | undefined): Theme {
-  return THEMES.find((t) => t.id === id) ?? THEMES[0];
+  return THEMES.find((t) => t.id === id) ?? (THEMES[0] as Theme);
 }
 
 export type TextPalette = "gold" | "white" | "blue";
