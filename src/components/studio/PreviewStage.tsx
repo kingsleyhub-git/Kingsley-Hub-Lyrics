@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { drawFrame, type RenderLine } from "@/lib/renderer";
 import type { StyleSettings } from "@/lib/themes";
-import logo from "@/assets/kingsley-hub-logo.jpg.asset.json";
+import logoUrl from "@/assets/kingsley-hub-logo.jpg";
 
 interface Props {
   timeMs: number;
@@ -19,7 +19,7 @@ export function useLogoImage() {
   useEffect(() => {
     const img = new Image();
     img.crossOrigin = "anonymous";
-    img.src = logo.url;
+    img.src = logoUrl;
     img.onload = () => {
       ref.current = img;
     };
