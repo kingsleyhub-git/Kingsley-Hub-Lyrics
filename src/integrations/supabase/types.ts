@@ -14,7 +14,154 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      lyric_lines: {
+        Row: {
+          created_at: string
+          end_ms: number | null
+          id: string
+          kind: string
+          position: number
+          project_id: string
+          start_ms: number | null
+          text: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          end_ms?: number | null
+          id?: string
+          kind?: string
+          position?: number
+          project_id: string
+          start_ms?: number | null
+          text?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          end_ms?: number | null
+          id?: string
+          kind?: string
+          position?: number
+          project_id?: string
+          start_ms?: number | null
+          text?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lyric_lines_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
+      projects: {
+        Row: {
+          artist: string
+          aspect: string
+          audio_name: string | null
+          audio_path: string | null
+          created_at: string
+          duration_ms: number
+          id: string
+          style: Json
+          theme_id: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          artist?: string
+          aspect?: string
+          audio_name?: string | null
+          audio_path?: string | null
+          created_at?: string
+          duration_ms?: number
+          id?: string
+          style?: Json
+          theme_id?: string
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          artist?: string
+          aspect?: string
+          audio_name?: string | null
+          audio_path?: string | null
+          created_at?: string
+          duration_ms?: number
+          id?: string
+          style?: Json
+          theme_id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      renders: {
+        Row: {
+          created_at: string
+          id: string
+          mime_type: string
+          project_id: string
+          resolution: string
+          size_bytes: number
+          storage_path: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          mime_type?: string
+          project_id: string
+          resolution?: string
+          size_bytes?: number
+          storage_path: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          mime_type?: string
+          project_id?: string
+          resolution?: string
+          size_bytes?: number
+          storage_path?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "renders_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
