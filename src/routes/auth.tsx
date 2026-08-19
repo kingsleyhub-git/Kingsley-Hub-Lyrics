@@ -59,8 +59,22 @@ function AuthPage() {
   }
 
   async function handleGoogle() {
-    // Same-origin public route: works on the Lovable preview, on Vercel and on a
-    // custom domain. Once the session hydrates, the effect above forwards to /projects.
+    // The Lovable OAuth broker lives at the relative path /~oauth/initiate, which only
+    // exists on Lovable-hosted domains — on Vercel that redirect 404s. Outside Lovable
+    // hosting, go straight through the backend's own Google OAuth flow instead.
+    const host = window.location.hostname;
+    const isLovableHost =
+      host.endsWith(".lovable.app") || host.endsWith(".lovable.dev") || host === "localhost";
+
+    if (!isLovableHost) {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo: `${window.location.origin}/auth` },
+      });
+      if (error) toast.error("Google sign-in failed. Try email instead.");
+      return;
+    }
+
     const result = await lovable.auth.signInWithOAuth("google", {
       redirect_uri: `${window.location.origin}/auth`,
     });
@@ -71,6 +85,7 @@ function AuthPage() {
     if (result.redirected) return;
     navigate({ to: "/projects" });
   }
+
 
   return (
     <div className="min-h-screen">
