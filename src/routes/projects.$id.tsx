@@ -348,7 +348,10 @@ function StudioPage() {
                     size="sm"
                     onClick={() => {
                       const parsed = linesFromPlainText(bulkText);
-                      if (!parsed.length) return toast.error("Nothing to import");
+                      if (!parsed.length) {
+                        toast.error("Nothing to import");
+                        return;
+                      }
                       setLines(parsed.map((text) => ({ text, startMs: null, kind: "line" })));
                       setCursor(0);
                       setBulkText("");
@@ -529,8 +532,8 @@ function StudioPage() {
                   <div className="space-y-2">
                     <Label>Text colour</Label>
                     <Select
-                      value={style.palette}
-                      onValueChange={(v) => setStyle({ ...style, palette: v as StyleSettings["palette"] })}
+                      value={style.textPalette}
+                      onValueChange={(v) => setStyle({ ...style, textPalette: v as StyleSettings["textPalette"] })}
                     >
                       <SelectTrigger>
                         <SelectValue />

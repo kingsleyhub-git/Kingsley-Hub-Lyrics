@@ -65,7 +65,7 @@ function ProjectsPage() {
           user_id: user!.id,
           title: title.trim() || "Untitled track",
           artist: artist.trim(),
-          style: DEFAULT_STYLE as unknown as Record<string, unknown>,
+          style: DEFAULT_STYLE as unknown as Json,
         })
         .select("id")
         .single();
