@@ -19,6 +19,7 @@ import {
 } from "@/components/ui/dialog";
 import { useAuth } from "@/hooks/useAuth";
 import { DEFAULT_STYLE } from "@/lib/themes";
+import type { Json } from "@/integrations/supabase/types";
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
