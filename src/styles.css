@@ -110,8 +110,9 @@
 }
 
 @theme inline {
-  --font-display: "Cinzel", serif;
-  --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-display: "Ubuntu", system-ui, sans-serif;
+  --font-sans: "Ubuntu", system-ui, sans-serif;
+  --font-mono: "Ubuntu Mono", ui-monospace, monospace;
 }
 
 @layer base {
